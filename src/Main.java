@@ -18,6 +18,22 @@ for (int[] row : matrix) {
 – В консоль выводится матрица 3х3 со значениями единицы по диагонали.
 – При изменении единицы на другое значение матрица выводится в консоль корректно.
 – Для вывода результата в консоль используется один цикл.
+*/
+        int[][] matrix = new int[3][3];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (i == j || i + j == matrix.length - 1) {
+                    matrix[i][j] = 1;
+                }
+            }
+        }
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+        /*
 :death_star: Задание 6
 У нас есть массив, в котором содержатся целочисленные значения от 1 до 5.
 Наш коллега что-то напутал, в итоге массив читается не с начала, а с конца.
@@ -31,6 +47,14 @@ System.out.println(Arrays.toString(arr));
 – В консоль выведен результат программы до преобразований массива.
 – В консоль выведен результат программы после преобразований массива.
 – Программа выводит корректный результат при смене значений внутри массива.
+*/
+        int[] unsortedArr = {5, 4, 3, 2, 1};
+        int[] sortedArr = new int[unsortedArr.length];
+        for (int i = 0; i < unsortedArr.length; i++) {
+            sortedArr[i] = unsortedArr[unsortedArr.length - 1 - i];
+        }
+        System.out.println(Arrays.toString(sortedArr));
+        /*
 :death_star: Задание 7
 Решите предыдущее задание, но без использования дополнительного массива.
 Необходимо добиться того, чтобы исходный массив полностью соответствовал второму массиву из прошлого задания.
@@ -45,6 +69,14 @@ System.out.println(Arrays.toString(arr));
 – В консоль выведен результат программы до преобразований массива.
 – В консоль выведен результат программы после преобразований массива.
 – Программа выводит корректный результат при смене значений внутри массива.
+*/
+  for (int i = 0; i < unsortedArr.length / 2; i++) {
+            int temp = unsortedArr[i];
+            unsortedArr[i] = unsortedArr[unsortedArr.length - 1 - i];
+            unsortedArr[unsortedArr.length - 1 - i] = temp;
+        }
+        System.out.println(Arrays.toString(unsortedArr));
+  /*
 :death_star:  Задание 8  Очень сложно.
 Задача, которая используется/бывает/встречается на собеседованиях.
 Дан массив чисел {−6, 2, 5, −8, 8, 10, 4, −7, 12, 1}
@@ -61,38 +93,8 @@ System.out.println(Arrays.toString(arr));
 Критерии оценки
 – Найдены все пары чисел, удовлетворяющие условию задачи.
 – При изменении значений массива в консоль выводится корректный результат.
-– В консоль выведен результат решения задания.*/
-        //Задание 5
-        int[][] matrix = new int[3][3];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (i == j || i + j == matrix.length - 1) {
-                    matrix[i][j] = 1;
-                }
-            }
-        }
-        for (int[] row : matrix) {
-            for (int column : row) {
-                System.out.print(column + " ");
-            }
-            System.out.println();
-        }
-        //Задача 6
-        int[] unsortedArr = {5, 4, 3, 2, 1};
-        int[] sortedArr = new int[unsortedArr.length];
-        for (int i = 0; i < unsortedArr.length; i++) {
-            sortedArr[i] = unsortedArr[unsortedArr.length - 1 - i];
-        }
-        System.out.println(Arrays.toString(sortedArr));
-        //Задача 7
-        for (int i = 0; i < unsortedArr.length / 2; i++) {
-            int temp = unsortedArr[i];
-            unsortedArr[i] = unsortedArr[unsortedArr.length - 1 - i];
-            unsortedArr[unsortedArr.length - 1 - i] = temp;
-        }
-        System.out.println(Arrays.toString(unsortedArr));
-        //Задача 9
-
+– В консоль выведен результат решения задания.
+**** Сделал сразу 9 пропустив 8*/
         int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
@@ -105,7 +107,6 @@ System.out.println(Arrays.toString(arr));
                 }
             }
         }
-
 
     }
 }
